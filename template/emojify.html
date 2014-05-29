@@ -1,0 +1,24 @@
+<% var keys = _.keys(emojies); %>
+<div id="emojify">
+    <ul class="tabs">
+        <% _.each(keys, function(key, index){ %>
+        <li class="<% if(index === 0) { %> active <% } %>" data-rel="<%= key %>">
+            <a href="#">
+                <img src="http://static.gate.local.vn/emoji/<%= key %>/<%= emojies[key][0].src %>" />
+            </a>
+        </li>
+        <% }); %>
+    </ul>
+    
+    <% _.each(keys, function(key, index){ %>
+    <ul class="tab-container <% if(index === 0) { %> active <% } %>" data-id="<%= key %>">
+        <% _.each(emojies[key], function(emoji){ %>
+        <li>
+            <a href="#" class="<%= emojiClass %>" data-code="<%= emoji.code %>">
+                <img src="http://static.gate.local.vn/emoji/<%= key %>/<%= emoji.src %>" />
+            </a>
+        </li>
+        <% });%>
+    </ul>
+    <% }); %>
+</div>

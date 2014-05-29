@@ -1,0 +1,22 @@
+{
+  "name": "noti_client",
+  "version": "0.0.1",
+  "description": "Notification version v2",
+  "author": "Thanh Dc",
+  "homepage": "http://gate.vn",
+  "main": "index",
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "engineStrict": true,
+  "dependencies": {
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-browserify": "~2.0.1",
+    "grunt-shell": "~0.6.4",
+    "browserify": "~3.32.1",
+    "brfs": "*"
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="./bower_components/caret/dist/jquery.caret.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="cons-holder well">
+                        
+                    </div>
+                    <div class="cons-input">
+                        <form action="action" class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="msg" placeholder="Type your message">
+                                <a href="#" id="btn-emoji"><span class="glyphicon glyphicon-info-sign"></span></a>
+                                <button type="submit" class="btn btn-default btn-send">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="build.js"></script>
+        <script>
+            var emojify = new Emojify({
+                target: '#btn-emoji',
+                onSelect: function(code) {
+                    var pos = $('#msg').caret('pos'),
+                        val = $('#msg').val();
+                        val = val.slice(0, pos) + code + val.slice(pos);
+                        
+                    $('#msg').val(val);
+                }
+            });
+            
+            $(document).ready(function(){
+                $('.btn-send').bind('click', function(e){
+                    e.preventDefault();
+                    $('.cons-holder').append('<p>' + emojify.parse($('#msg').val()) + '</p>');
+                    $('#msg').val('');
+                });
+            });
+        </script>
+    </body>
+</html>

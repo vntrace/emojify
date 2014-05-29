@@ -1,0 +1,71 @@
+#emojify {
+    display: none; 
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #FFF;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+#emojify ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+#emojify .tabs {
+    border-bottom: 1px solid #ccc;
+}
+
+#emojify .tabs li {
+    float: left;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+
+#emojify .tabs img{
+    width: 18px;
+    height: 18px;
+}
+
+#emojify .tab-container img{
+    max-width: 100%;
+    height: 30px;
+}
+
+#emojify .tabs li.active {
+    background-color: #ccc;
+}
+
+#emojify .tabs li a {
+
+}
+
+#emojify .tab-container {
+    display: none;
+}
+
+#emojify .tab-container.active {
+    display: block !important;
+}
+
+#emojify .tab-container li {
+    float: left;
+    margin-left: 2px;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.cons-holder {
+    height: 200px;
+    border: 1px solid #ccc;
+}

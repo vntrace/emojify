@@ -1,0 +1,1 @@
+window.Emojify = require('./modules/emojify');
